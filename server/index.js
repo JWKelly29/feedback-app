@@ -6,6 +6,6 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-console.log("Running on port: " + PORT);
+console.log("Running on port:  " + PORT);
 
 app.listen(PORT);
