@@ -5,6 +5,18 @@ const keys = require("../config/keys");
 
 const User = mongoose.model("users");
 
+passport.serializeUser((user, done) => {
+  // Making use of id assigned to user by mongo
+  // After user signs we want to save user id to cookie
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => {
+    done(null, user);
+  });
+});
+
 passport.use(
   new GoogleStrategy(
     {
@@ -13,12 +25,15 @@ passport.use(
       callbackURL: "/auth/google/callback"
     },
     (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleID: profile.id }).then(existingUser => {
+      User.findOne({ googleId: profile.id }).then(existingUser => {
         if (existingUser) {
-          // User exists
+          // user found
+          done(null, existingUser);
         } else {
-          // User does not exist, create new user
-          new User({ googleID: profile.id }).save();
+          // no user found, create new user
+          new User({ googleId: profile.id })
+            .save()
+            .then(user => done(null, user));
         }
       });
     }
