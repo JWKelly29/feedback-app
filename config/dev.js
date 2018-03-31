@@ -7,5 +7,7 @@ module.exports = {
   mongoURI: "mongodb://jack:Rangers121@ds119049.mlab.com:19049/emaily-dev",
   cookieKey: "hdhpidvihiohii4940969uknkd3",
   stripePublishableKey: "pk_test_gJZEgJ732lu7hPCQBHQV31G4",
-  stripeSecretKey: "sk_test_RSD6RWCsNWu7BOyUsQ6VWklj"
+  stripeSecretKey: "sk_test_RSD6RWCsNWu7BOyUsQ6VWklj",
+  sendGridKey:
+    "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"
 };
