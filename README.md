@@ -1,6 +1,13 @@
 Heroku URL: https://warm-eyrie-42191.herokuapp.com
 
+## Outstanding Tasks
+
+I am using trello to keep track of the things I would like to add to the project.
+https://trello.com/c/c9cWTMBY/2-create-a-survey-form-so-that-a-user-may-send-surveys
+
 ## Design Choices
+
+### Mocha / Chai
 
 ### Cookie-Session Middleware
 
