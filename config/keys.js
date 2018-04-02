@@ -1,5 +1,4 @@
 // logic for handling what credentials to return
-console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV == "production") {
   // if in production return production keys
   module.exports = require("./prod.js");

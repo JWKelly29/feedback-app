@@ -18,6 +18,3 @@ ReactDOM.render(
   </Provider>,
   document.querySelector("#root")
 );
-
-console.log("STIPE KEY IS", process.env.REACT_APP_STRIPE_KEY);
-console.log("Enviroment is", process.env.NODE_ENV);

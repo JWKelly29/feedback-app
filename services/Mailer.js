@@ -5,14 +5,13 @@ const keys = require("../config/keys");
 class Mailer extends helper.Mail {
   constructor({ subject, recipients }, content) {
     super();
-    console.log(recipients);
+    console.log("keys", keys);
+    console.log("sgapi", keys.sendGridKey);
     this.sgApi = sendgrid(keys.sendGridKey);
     this.from_email = new helper.Email("no-reply@feedback-app.com");
     this.subject = subject;
     this.body = new helper.Content("text/html", content);
     this.recipients = this.formatAddresses(recipients);
-
-    console.log(this.from_email, this.subject, this.body, this.recipients);
 
     // Add content must be called to pass template to email
     this.addContent(this.body);
