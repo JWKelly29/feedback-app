@@ -9,6 +9,10 @@ https://trello.com/c/c9cWTMBY/2-create-a-survey-form-so-that-a-user-may-send-sur
 
 ### Mocha / Chai
 
+### React-Form
+
+I have opted to use the React-Form framework to automatically creare all of the different event handlers on my multi-page form (http://localhost:3000/surveys/new) for me which allows me to keep the code cleaner. This allows my forms to not have to worry to much about handling and validating user input.
+
 ### Cookie-Session Middleware
 
 I have opted to use cookie-session as opposed to express session for ease of use. Storing our session in the cookie also means minimal database lookups. However this comes at the cost of only being able to store around 4kb of data.
