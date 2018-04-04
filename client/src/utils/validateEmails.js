@@ -7,7 +7,7 @@ export default emails => {
       return email.trim();
     })
     .filter(email => {
-      return regExp.test(email) === false;
+      return email.length && regExp.test(email) === false;
     });
 
   if (invalidEmails.length) {
