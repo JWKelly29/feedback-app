@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import { Link } from "react-router-dom";
 import SurveyField from "./surveyField";
+import validateEmails from "../../utils/validateEmails";
 
 const FIELDS = [
   { label: "Survey Title", name: "title" },
@@ -46,9 +47,11 @@ class SurveyForm extends Component {
 
 function validate(values) {
   const errors = {};
+  console.log(values);
+  errors.email = validateEmails(values.email || "");
+
   _.each(FIELDS, ({ name }) => {
     if (!values[name]) {
-      console.log(name);
       errors[name] = `You must provide a ${name}`;
     }
   });
