@@ -6,13 +6,14 @@ import Payments from "./Payments";
 class Header extends Component {
   renderContent() {
     console.log("rendercontent-props", this.props);
+    console.log(this.props.auth);
     switch (this.props.auth) {
       case null:
         return;
       case false:
         return [
-          <li>
-            <a href="/auth/google"> Login with Google </a>
+          <li key="1">
+            <a href="/auth/google">Login with Google</a>
           </li>
         ];
       default:

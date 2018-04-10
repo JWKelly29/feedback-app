@@ -1,35 +1,59 @@
-const mongoose = require("mongoose");
-const keys = require("../config/keys");
-require("../index.js");
+var chai = require("chai");
+var mongoose = require("mongoose");
+var chaiHttp = require("chai-http");
+var app = require("../index"); // my express app serverc
+var should = chai.should();
+var testUtils = require("./test-utils");
+var sinon = require("sinon");
 
-const User = mongoose.model("users");
+var request = require("request");
 
-if (process.env.NODE_ENV != "test") {
-  throw "Not running on test enviroment. Please type 'export NODE_ENV=test' to switch to test environment";
-}
+chai.use(chaiHttp);
 
-var assert = require("assert");
-
-beforeEach(function() {
-  const db = mongoose.connection;
-  db.on("error", console.error.bind(console, "connection error"));
-  db.once("open", function() {
-    console.log("We are connected to test database!");
+describe("API Tests", function() {
+  // before(function() {
+  //   mongoose.connect();
+  // });
+  //
+  beforeEach(function(done) {
+    sinon.stub(request, "get").yields(
+      undefined,
+      {},
+      JSON.stringify({
+        user: {
+          credits: 0,
+          _id: "5acd0f5a96f17c1263f4d76a",
+          googleID: "101154238693901585161",
+          __v: 0
+        }
+      })
+    );
+    done();
   });
-  return db.dropDatabase(function() {
-    console.log("db dropped");
-    //mongoose.connection.close(done);
+  //
+  afterEach(function() {
+    request.get.restore();
   });
-});
+  //
+  // after(function() {
+  //   mongoose.connection.close();
+  // });
 
-describe("User", function() {
-  describe("#save()", function() {
-    it("should save without error", function(done) {
-      var user = new User({ googleID: "hfucydbsibcibshib" });
-      user.save(function(err) {
-        if (err) done(err);
-        else done();
-      });
+  // requireLogin = function() {
+  //   return;
+  // };
+
+  describe("AUTH", function() {
+    it("should redirect to google authorization page", done => {
+      chai
+        .request(app)
+        .get("/auth/google")
+        .end((err, res) => {
+          res.redirects[0].should.contain(
+            "https://accounts.google.com/o/oauth2/v2/auth"
+          ) && res.redirects[0].should.contain("auth%2Fgoogle%2Fcallback");
+          done();
+        });
     });
   });
 });
