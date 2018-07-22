@@ -11,7 +11,7 @@ The user "pays" for tokens, of course I have set up a free stripe testing accoun
 
 They then add a survey by clicking the red plus button which takes them to an email template. Once the user fills in the email template and a comma seperated list of users they then click "submit". They are then taken to a review page. Once they are happy with their survey they click "send survey" and 1 credit will be subtracted from their account wallet and an email will be sent to their list of recipients.
 
-Once a survey recipient opens their email they should see the same email title and body entered by the user as well as two links that say "yes" and "no". A recipient may click any one of these. They will be redirected to a thankyou page. A recipient may not answer the survey more than once. The user will be able to navigate to the "/surveys" page of the project to see a list of surveys they have sent and what the current yes or no count is for each.
+Once a survey recipient opens their email they should see the same email title and body entered by the user as well as two links that say "yes" and "no". A recipient may click any one of these. They will be redirected to a thank you page. A recipient may not answer the survey more than once. The user will be able to navigate to the "/surveys" page of the project to see a list of surveys they have sent and what the current yes or no count is for each.
 
 
 ## Design Choices
