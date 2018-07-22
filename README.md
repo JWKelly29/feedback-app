@@ -13,12 +13,28 @@ They then add a survey by clicking the red plus button which takes them to an em
 
 Once a survey recipient opens their email they should see the same email title and body entered by the user as well as two links that say "yes" and "no". A recipient may click any one of these. They will be redirected to a thank you page. A recipient may not answer the survey more than once. The user will be able to navigate to the "/surveys" page of the project to see a list of surveys they have sent and what the current yes or no count is for each.
 
+## Main Components
+
+- ``` <App />```
+    - top level component; responsible for rendering child components;
+    - Child components rendered ```<BrowserRouter />```, ```<Header />```, ```Landing ```, ```Dashboard ```, ```<SurveyNew/>
+    - Fetches user data in ```componentDidMount ```
+    - Has routes for Landing, Dashboard and SurveyNew pages
+- ``` <Header />```
+    - Responsible for rendering header jsx
+    - Has a ```renderContent``` function which renders jsx based on whether a user has been authenticated using OAuth
+- ``` <Dashboard />```
+    - Renders SurveyList Child Component
+    - Renders a link to SurveyNew
+- ``` <SurveyList/>```
+    - Fetches survey data in ``` componentDidMount```
+    - Has a renderSurveys function which maps jsx to each survey data point in reverse order (as to render newest survey items first on the page)
 
 ## Design Choices
 
 ### React-Form
 
-I have opted to use the React-Form framework to automatically creare all of the different event handlers on my multi-page form (http://localhost:3000/surveys/new) for me which allows me to keep the code cleaner. This allows my forms to not have to worry to much about handling and validating user input.
+I have opted to use the React-Form framework to automatically create all of the different event handlers on my multi-page form (http://localhost:3000/surveys/new) for me which allows me to keep the code cleaner. This allows my forms to not have to worry too much about handling and validating user input.
 
 ### Cookie-Session Middleware
 
