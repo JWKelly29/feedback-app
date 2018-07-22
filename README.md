@@ -66,3 +66,16 @@ Properly shut down the process by entering the command:
 ```
   kill -9 <pid>
 ```
+
+## EndNotes
+
+This project was bootstrapped with ```Create React App```
+
+### TODO
+- Unit testing
+- Styling and UX overhaul
+- Allow more flexibility in email template and survey questions
+- Track more user data than just simply email link clicks
+- Allow a user to login in other ways than google OAuth
+- Allow a user to track survey meta data
+- Allow a user to save a list of recipients in the database (user emails will have to be encrypted)
