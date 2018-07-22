@@ -2,7 +2,7 @@ Heroku URL: https://warm-eyrie-42191.herokuapp.com/
 
 ## The Feedback App Project
 
-This project was built to further my understanding of node and react. In order to complete this project in a reasonable amount of time, I decided to learn and use some libraries, as developing my own automated email or payment processing platform would be way beyond the goals I set out to achieve. 
+This project was built to further my understanding of node and react. In order to complete this project in a reasonable amount of time, I decided to learn and use some libraries, as developing my own automated email or payment processing platform would be way beyond the goals I set out to achieve.
 
 ## How to use
 
