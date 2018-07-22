@@ -1,13 +1,20 @@
-Heroku URL: https://warm-eyrie-42191.herokuapp.com
+Heroku URL: https://warm-eyrie-42191.herokuapp.com/
 
-## Outstanding Tasks
+## The Feedback App Project
 
-I am using trello to keep track of the things I would like to add to the project.
-https://trello.com/c/c9cWTMBY/2-create-a-survey-form-so-that-a-user-may-send-surveys
+This project was built to further my understanding of node and react. In order to complete this project in a reasonable amount of time, I decided to learn and use some libraries, as developing my own automated email or payment processing platform would be way beyond the goals I set out to achieve. 
+
+
+## How to use
+
+The user "pays" for tokens, of course I have set up a free stripe testing account so you may add $5 to your account by adding 4242 4242 4242 4242 as the card number and any valid expiry date and ccv number.
+
+They then add a survey by clicking the red plus button which takes them to an email template. Once the user fills in the email template and a comma seperated list of users they then click "submit". They are then taken to a review page. Once they are happy with their survey they click "send survey" and 1 credit will be subtracted from their account wallet and an email will be sent to their list of recipients.
+
+Once a survey recipient opens their email they should see the same email title and body entered by the user as well as two links that say "yes" and "no". A recipient may click any one of these. They will be redirected to a thankyou page. A recipient may not answer the survey more than once. The user will be able to navigate to the "/surveys" page of the project to see a list of surveys they have sent and what the current yes or no count is for each.
+
 
 ## Design Choices
-
-### Mocha / Chai
 
 ### React-Form
 
