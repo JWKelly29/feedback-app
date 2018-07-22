@@ -4,7 +4,6 @@ Heroku URL: https://warm-eyrie-42191.herokuapp.com/
 
 This project was built to further my understanding of node and react. In order to complete this project in a reasonable amount of time, I decided to learn and use some libraries, as developing my own automated email or payment processing platform would be way beyond the goals I set out to achieve. 
 
-
 ## How to use
 
 The user "pays" for tokens, of course I have set up a free stripe testing account so you may add $5 to your account by adding 4242 4242 4242 4242 as the card number and any valid expiry date and ccv number.
@@ -71,7 +70,17 @@ Properly shut down the process by entering the command:
 
 This project was bootstrapped with ```Create React App```
 
-### TODO
+### Running the project locally
+
+- In the terminal type ```git clone https://github.com/JWKelly29/feedback-app.git```
+- Go into the project directory ```cd [location]``` 
+- type ```npm install``` to install all the neccesary libraries needed to run the project
+- then go into the client directory ```cd ./client``` and type ```npm install``` to install libraries needed in the client
+- Then go back ```cd ../```
+- Then run the script ```npm run dev```
+- Locate your browser to ```localhost:3000```
+
+### Still TODO
 - Unit testing
 - Styling and UX overhaul
 - Allow more flexibility in email template and survey questions
