@@ -29,7 +29,14 @@ Once a survey recipient opens their email they should see the same email title a
 - ``` <SurveyList/>```
     - Fetches survey data in ``` componentDidMount```
     - Has a renderSurveys function which maps jsx to each survey data point in reverse order (as to render newest survey items first on the page)
+- ``` <Payments />```
+    - Renders a native ```StipeCheckout ``` component which take name(title in stripe payment section), description(a short description to tell the user what they are buying), amount(to charge a user), token(OAuth token) and stripeKey(Unique key) arguments.
 
+- ``` <SurveyForm />```
+    - Renders survey fields
+    - Has a validate function which validates all fields are filled in and that the comma seperated list of emails is both comma seperated and a list of emails. Any mistakes such as an email without an "@" or a fullstop instead of a comma will be caught and an error will be displayed to the user. Spaces and newlines after commas are allowed.
+    - The form is destroyed on unmount to avoid confusing the user if they choose to navigate away. Once a user navigates back to the form after navigating away the form will be empty.
+    
 ## Design Choices
 
 ### React-Form
