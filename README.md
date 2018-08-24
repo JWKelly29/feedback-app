@@ -87,4 +87,4 @@ This project was bootstrapped with ```Create React App```
 - Track more user data than just simply email link clicks
 - Allow a user to login in other ways than google OAuth
 - Allow a user to track survey meta data
-- Allow a user to save a list of recipients in the database (user emails will have to be encrypted)
+- Allow a user to save a list of recipients in the database (email addresses will have to be encrypted)
